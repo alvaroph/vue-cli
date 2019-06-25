@@ -1,4 +1,5 @@
-# prova
+# Proyecto para aprender vue-cli y uso de github
+Se trata de intentar optimizar el flujo de trabajo
 
 ## Project setup
 ```
