@@ -2,37 +2,33 @@
 <div>
 
 
-<b-container>
+<div class="overflow-auto">
+    <b-pagination
+      v-model="currentPage"
+      :total-rows="rows"
+      :per-page="perPage"
+      aria-controls="my-table"
+    ></b-pagination>
 
+    <p class="mt-3">Current Page: {{ currentPage }}</p>
 
-  <b-row>
-    <div v-for="(item,index) in aulas" :key="item"  cols="4">
-        <AulasInformaticas :listaOrd="ordenadoresAulas(item)" :nombre="item"></AulasInformaticas>
-    </div>
-  </b-row>
-</b-container>
-   
-       
-    
-
-
-
-
-
-       <div v-for="(item) in computers" :key="item.mac">
-      <Ordenador :computer="item"></Ordenador>
-    </div>
+    <b-table
+      id="my-table"
+      :items="computers"
+      :per-page="perPage"
+      :current-page="currentPage"
+      small
+    ></b-table>
+  </div>
 
     </div>
  
 </template>
 
 <script>
-import AulasInformaticas from './AulasInformaticas.vue';
-import Ordenador from './Ordenador.vue';
 
 export default {
-  name: 'inicio',
+  name: 'listado',
   data() {
     return {
       computers: [],
@@ -40,10 +36,6 @@ export default {
       perPage: 10,
       currentPage: 1
     };
-  },
-  components: {
-    Ordenador,
-    AulasInformaticas,
   },
 
   mounted() {

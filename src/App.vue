@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="lg" type="dark" variant="light">
+    <b-navbar toggleable="lg" type="dark" variant="dark">
     <b-navbar-brand href="#">NavBar</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Link</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
+        <b-nav-item> <router-link to="/">Inicio</router-link> </b-nav-item>
+        <b-nav-item > <router-link to="/listado">Todas las conexiones</router-link></b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -34,10 +34,7 @@
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
-    <div id="nav">
-      <router-link to="/">Inicio</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  
     <router-view/>
   </div>
 </template>
